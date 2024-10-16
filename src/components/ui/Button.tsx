@@ -1,9 +1,10 @@
 type ButtonProps = {
-  goTo: () => void;
+  goTo?: () => void;
+  goBackTo?: () => void;
   type: "next" | "previous";
 };
 
-const Button = ({ goTo, type }: ButtonProps) => {
+const Button = ({ goTo, goBackTo, type }: ButtonProps) => {
   if (type === "next") {
     return (
       <button
@@ -17,7 +18,7 @@ const Button = ({ goTo, type }: ButtonProps) => {
   if (type === "previous") {
     return (
       <button
-        onClick={goTo}
+        onClick={goBackTo}
         className="flex h-10 px-4 justify-center items-center text-zinc-350"
       >
         Previous
