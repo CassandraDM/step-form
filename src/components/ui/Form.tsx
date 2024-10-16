@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import Button from "./Button";
 
 type FormProps = {
   goTo: () => void;
@@ -213,12 +214,7 @@ const Form = ({ goTo }: FormProps) => {
           </div>
         </div>
         <div className="w-full flex justify-end">
-          <button
-            onClick={goTo}
-            className="flex h-10 px-4 justify-center items-center gap-2.5 rounded bg-pastel-purple-500 text-white"
-          >
-            Next
-          </button>
+          <Button goTo={goTo} type="next" />
         </div>
       </div>
     </div>
