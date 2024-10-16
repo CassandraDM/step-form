@@ -1,7 +1,16 @@
+import { useNavigate } from "react-router-dom";
+import Form from "../ui/Form";
+
 export const PersonalInfo = () => {
-  return (
-    <div>
-      <h1>Personal Info</h1>
-    </div>
-  );
+  const navigate = useNavigate();
+
+  const goToAccountTypePage = () => {
+    navigate("/");
+  };
+
+  const goToProfileDataPage = () => {
+    navigate("/profile-data");
+  };
+
+  return <Form goTo={goToProfileDataPage} goBackTo={goToAccountTypePage} />;
 };
