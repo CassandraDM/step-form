@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { AccountType } from "./pages/AccountType";
-import { PersonalInfo } from "./pages/PersonalInfo";
+import { AccountType } from "./components/pages/AccountType";
+import { PersonalInfo } from "./components/pages/PersonalInfo";
 // import ProfileData from "./pages/ProfileData";
 
 function App() {

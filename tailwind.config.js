@@ -7,6 +7,9 @@ export default {
         zinc: {
           350: "#C8C8D0",
         },
+        "pastel-purple": {
+          500: "#B991ff",
+        },
       },
     },
   },
