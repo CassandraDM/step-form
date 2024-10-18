@@ -3,6 +3,7 @@ import "./App.css";
 import { AccountType } from "./components/pages/AccountType";
 import { PersonalInfo } from "./components/pages/PersonalInfo";
 import ProfileData from "./components/pages/ProfileData";
+import FormSubmitted from "./components/pages/FormSubmitted";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<AccountType />} />
         <Route path="/personal-info" element={<PersonalInfo />} />
-        <Route path="/profil-data" element={<ProfileData />} />
+        <Route path="/profile-data" element={<ProfileData />} />
+        <Route path="/form-submitted" element={<FormSubmitted />} />
       </Routes>
     </Router>
   );
