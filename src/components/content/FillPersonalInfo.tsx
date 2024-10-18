@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "../ui/Button";
+import Input from "../ui/Input";
 
 type FillPersonalInfoProps = {
   goBackTo?: () => void;
@@ -17,30 +18,23 @@ const FillPersonalInfo = ({ goBackTo, goTo }: FillPersonalInfoProps) => {
   };
 
   return (
-    <div className="flex flex-col gap-8">
+    <div>
       <form onSubmit={onSubmit}>
-        <div>
-          <label htmlFor="">Name</label>
-          <input
-            type="text"
-            placeholder="John Doe"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="">Email</label>
-          <input
-            type="text"
-            placeholder="johndoe@mail.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="">Password</label>
-          <input type="text" placeholder="********" />
-        </div>
+        <Input
+          label="Name"
+          placeholder="John Doe"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <Input
+          label="Email"
+          placeholder="johndoe@mail.com"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Input label="Password" placeholder="********" type="password" />
       </form>
       <div className="w-full flex justify-end">
         <Button goBackTo={goBackTo} type="previous" />
