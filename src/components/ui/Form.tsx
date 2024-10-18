@@ -26,7 +26,7 @@ const Form = ({
   const isProfileDataPath = location.pathname === "/profile-data";
 
   return (
-    <div className="flex justify-center items-center bg-slate-400 h-full">
+    <div className="flex justify-center items-center  h-full">
       <div className="bg-white w-[480px] p-8 justify-center items-center rounded-lg flex flex-col gap-[70px]">
         <div className="flex flex-col gap-12">
           <div className="flex flex-col gap-10">
