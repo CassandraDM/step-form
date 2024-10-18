@@ -9,7 +9,7 @@ export const PersonalInfo = () => {
   };
 
   const goToProfileDataPage = () => {
-    navigate("/profil-data");
+    navigate("/profile-data");
   };
 
   return <Form goTo={goToProfileDataPage} goBackTo={goToAccountTypePage} />;
