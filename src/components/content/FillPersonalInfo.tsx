@@ -1,16 +1,23 @@
-import { useState } from "react";
 import Button from "../ui/Button";
 import Input from "../ui/Input";
 
 type FillPersonalInfoProps = {
   goBackTo?: () => void;
   goTo?: () => void;
+  name?: string;
+  setName?: (name: string) => void;
+  email?: string;
+  setEmail?: (email: string) => void;
 };
 
-const FillPersonalInfo = ({ goBackTo, goTo }: FillPersonalInfoProps) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-
+const FillPersonalInfo = ({
+  goBackTo,
+  goTo,
+  name,
+  setName,
+  email,
+  setEmail,
+}: FillPersonalInfoProps) => {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Name: ", name);
@@ -25,14 +32,14 @@ const FillPersonalInfo = ({ goBackTo, goTo }: FillPersonalInfoProps) => {
           placeholder="John Doe"
           type="text"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setName && setName(e.target.value)}
         />
         <Input
           label="Email"
           placeholder="johndoe@mail.com"
           type="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail && setEmail(e.target.value)}
         />
         <Input label="Password" placeholder="********" type="password" />
       </form>

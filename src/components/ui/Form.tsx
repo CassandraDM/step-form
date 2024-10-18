@@ -6,9 +6,20 @@ import FillProfileData from "../content/FillProfileData";
 type FormProps = {
   goTo: () => void;
   goBackTo?: () => void;
+  name?: string;
+  setName?: (name: string) => void;
+  email?: string;
+  setEmail?: (email: string) => void;
 };
 
-const Form = ({ goTo, goBackTo }: FormProps) => {
+const Form = ({
+  goTo,
+  goBackTo,
+  name,
+  setName,
+  email,
+  setEmail,
+}: FormProps) => {
   const location = useLocation();
   const isAccountTypePath = location.pathname === "/";
   const isPersonalInfoPath = location.pathname === "/personal-info";
@@ -95,7 +106,14 @@ const Form = ({ goTo, goBackTo }: FormProps) => {
           </div>
           {(isAccountTypePath && <ChoseAccountType goTo={goTo} />) ||
             (isPersonalInfoPath && (
-              <FillPersonalInfo goBackTo={goBackTo} goTo={goTo} />
+              <FillPersonalInfo
+                goBackTo={goBackTo}
+                goTo={goTo}
+                name={name}
+                setName={setName}
+                email={email}
+                setEmail={setEmail}
+              />
             )) ||
             (isProfileDataPath && (
               <FillProfileData goBackTo={goBackTo} goTo={goTo} />
