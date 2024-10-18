@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import ChoseAccountType from "../content/ChoseAccountType";
 import FillPersonalInfo from "../content/FillPersonalInfo";
+import FillProfileData from "../content/FillProfileData";
 
 type FormProps = {
   goTo: () => void;
@@ -92,10 +93,13 @@ const Form = ({ goTo, goBackTo }: FormProps) => {
               </div>
             </div>
           </div>
-          {isAccountTypePath && <ChoseAccountType goTo={goTo} />}
-          {isPersonalInfoPath && (
-            <FillPersonalInfo goTo={goTo} goBackTo={goBackTo} />
-          )}
+          {(isAccountTypePath && <ChoseAccountType goTo={goTo} />) ||
+            (isPersonalInfoPath && (
+              <FillPersonalInfo goBackTo={goBackTo} goTo={goTo} />
+            )) ||
+            (isProfileDataPath && (
+              <FillProfileData goBackTo={goBackTo} goTo={goTo} />
+            ))}
         </div>
       </div>
     </div>

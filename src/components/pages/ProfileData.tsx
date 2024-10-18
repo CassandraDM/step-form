@@ -5,7 +5,7 @@ const ProfileData = () => {
   const navigate = useNavigate();
 
   const goToPersonalInfo = () => {
-    navigate("/");
+    navigate("/personal-info");
   };
 
   const goToFormSubmitted = () => {
