@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { AccountType } from "./components/pages/AccountType";
 import { PersonalInfo } from "./components/pages/PersonalInfo";
-// import ProfileData from "./pages/ProfileData";
+import ProfileData from "./components/pages/ProfileData";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AccountType />} />
         <Route path="/personal-info" element={<PersonalInfo />} />
-        {/* <Route path="/profil-data" element={<ProfileData />} /> */}
+        <Route path="/profil-data" element={<ProfileData />} />
       </Routes>
     </Router>
   );

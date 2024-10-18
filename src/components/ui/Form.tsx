@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
-import Button from "./Button";
 import ChoseAccountType from "../content/ChoseAccountType";
+import FillPersonalInfo from "../content/FillPersonalInfo";
 
 type FormProps = {
   goTo: () => void;
@@ -27,13 +27,13 @@ const Form = ({ goTo, goBackTo }: FormProps) => {
               </p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="inline-flex items-start  gap-8 ">
-                <div className="flex flex-col gap-2 w-24 items-center">
+              <div className="inline-flex items-start  gap-8 relative">
+                <div className="flex flex-col gap-2 w-24 items-center relative z-10">
                   <div
                     className={`w-8 h-8 flex items-center justify-center border rounded-full ${
                       isAccountTypePath
                         ? "bg-pastel-purple-500 border-pastel-purple-500 "
-                        : " border-zinc-350"
+                        : " bg-white border-zinc-350"
                     }`}
                   >
                     <p
@@ -48,12 +48,12 @@ const Form = ({ goTo, goBackTo }: FormProps) => {
                     Account Type
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 w-24 items-center">
+                <div className="flex flex-col gap-2 w-24 items-center relative z-10">
                   <div
                     className={`w-8 h-8 flex items-center justify-center border rounded-full ${
                       isPersonalInfoPath
                         ? "bg-pastel-purple-500 border-pastel-purple-500 "
-                        : " border-zinc-350"
+                        : " bg-white border-zinc-350"
                     }`}
                   >
                     <p
@@ -68,12 +68,12 @@ const Form = ({ goTo, goBackTo }: FormProps) => {
                     Personal Information
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 w-24 items-center">
+                <div className="flex flex-col gap-2 w-24 items-center relative z-10">
                   <div
                     className={`w-8 h-8 flex items-center justify-center border rounded-full ${
                       isProfileDataPath
                         ? "bg-pastel-purple-500 border-pastel-purple-500 "
-                        : " border-zinc-350"
+                        : " bg-white border-zinc-350"
                     }`}
                   >
                     <p
@@ -88,14 +88,14 @@ const Form = ({ goTo, goBackTo }: FormProps) => {
                     Profile Data
                   </p>
                 </div>
+                <div className="absolute bg-zinc-350 h-[1px] w-[415.94px] top-[15.5px] left-[-32px] z-0"></div>
               </div>
             </div>
           </div>
-          {isAccountTypePath && <ChoseAccountType />}
-        </div>
-        <div className="w-full flex justify-end">
-          {!isAccountTypePath && <Button goBackTo={goBackTo} type="previous" />}
-          <Button goTo={goTo} type="next" />
+          {isAccountTypePath && <ChoseAccountType goTo={goTo} />}
+          {isPersonalInfoPath && (
+            <FillPersonalInfo goTo={goTo} goBackTo={goBackTo} />
+          )}
         </div>
       </div>
     </div>
